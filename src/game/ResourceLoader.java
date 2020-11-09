@@ -68,6 +68,7 @@ public class ResourceLoader
 				sprite.flip(false, true);
 				tile.setWidth((int)sprite.getHeight());
 				tile.setHeight((int)sprite.getHeight());
+				tile.setID(tiles.getTile().size());
 				tiles.addTile(tile);
 				tile = new Tile();
 			break;

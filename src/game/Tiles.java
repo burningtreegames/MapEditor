@@ -21,13 +21,6 @@ public class Tiles
 	
 	public void update()
 	{
-		/*
-			for(int i = 0; i < foregroundTiles.size(); i++)//Fix This
-				foregroundTiles.get(i).update();
-			for(int i = 0; i < backgroundTiles.size(); i++)
-				backgroundTiles.get(i).update();
-			}*/
-		
 		for(int y = 0; y < Game.getScreenHeightInTiles() + 1; y++)
 			for(int x = 0; x < Game.getScreenWidthInTiles(); x++)
 				if(Map.getMapX() + x < Map.getMapSize() && Map.getMapY() + y < Map.getMapSize())
@@ -35,8 +28,6 @@ public class Tiles
 					foregroundTiles.get(((Map.getMapY() + y) * Map.getMapSize()) + (Map.getMapX() + x)).update();
 					backgroundTiles.get(((Map.getMapY() + y) * Map.getMapSize()) + (Map.getMapX() + x)).update();
 				}
-			
-
 	}
 	
 	

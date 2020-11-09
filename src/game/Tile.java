@@ -112,7 +112,7 @@ public class Tile
 				sprite.flip(false, true);
 				i = Gdx.graphics.getFramesPerSecond();
 				
-				if(currentFrame == 0)
+				if(currentFrame <= 0)
 					currentFrame = animationFrames;
 				
 				currentFrame--;

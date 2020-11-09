@@ -29,7 +29,7 @@ public class Map
 		tiles = new Tiles();
 		tiles = resourceLoader.getTiles();
 		
-		mapSize = 256;
+		mapSize = 2;
 		mapX = 0;
 		mapY = 0;
 		
@@ -42,8 +42,7 @@ public class Map
 		for(int y = 0; y < mapSize; y++)
 			for(int x = 0; x < mapSize; x++)
 			{
-				tile = new Tile(tiles.getTilesByName("Grass"));
-				
+				tile = new Tile(tiles.getTilesByName("Water"));
 				tile.setX(x);
 				tile.setY(y);
 				tiles.addBackgroundTiles(tile);
@@ -76,7 +75,7 @@ public class Map
 					
 					spriteBatch.draw(tiles.getBackgroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
 						
-					if(tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getName().compareTo("Delete") != 0) // If Not Error Tile
+					if(tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getName().compareTo("Delete") != 0) // If Not Delete Tile
 						spriteBatch.draw(tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
 				
 					if(Maths.insideRectangle(x * Game.getSpriteSize(), y * Game.getSpriteSize(), (int)(Gdx.input.getX() / Game.getScale()), (int)(Gdx.input.getY() / Game.getScale()), Game.getSpriteSize()))
