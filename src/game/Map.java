@@ -29,20 +29,20 @@ public class Map
 		tiles = new Tiles();
 		tiles = resourceLoader.getTiles();
 		
-		mapSize = 2;
+		mapSize = 512;
 		mapX = 0;
 		mapY = 0;
 		
 		populateMap();
 	}
-	
+				
 	public void populateMap()
 	{
 		Tile tile = new Tile();
 		for(int y = 0; y < mapSize; y++)
 			for(int x = 0; x < mapSize; x++)
 			{
-				tile = new Tile(tiles.getTilesByName("Water"));
+				tile = new Tile(tiles.getTilesByName("Grass"));
 				tile.setX(x);
 				tile.setY(y);
 				tiles.addBackgroundTiles(tile);
