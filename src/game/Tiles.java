@@ -6,14 +6,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class Tiles 
 {
-	private ArrayList<Tile> tile;
+	private static ArrayList<Tile> tiles;
 	
-	private ArrayList<Tile> foregroundTiles;
-	private ArrayList<Tile> backgroundTiles;
+	private static ArrayList<Tile> foregroundTiles;
+	private static ArrayList<Tile> backgroundTiles;
 	
 	public Tiles()
 	{
-		tile = new ArrayList<Tile>();
+		tiles = new ArrayList<Tile>();
 		
 		foregroundTiles = new ArrayList<Tile>();
 		backgroundTiles = new ArrayList<Tile>();
@@ -31,37 +31,37 @@ public class Tiles
 	}
 	
 	
-	public void addTile(Tile tile)
+	public static void addTile(Tile tile)
 	{
-		this.tile.add(tile);
+		tiles.add(tile);
 	}
 	
-	public ArrayList<Tile> getTile()
+	public static ArrayList<Tile> getTile()
 	{
-		return tile;
+		return tiles;
 	}
 	
-	public Tile getTilesByName(String name)
+	public static Tile getTilesByName(String name)
 	{
-		Tile t = tile.get(1);
+		Tile t = tiles.get(1);
 		
-		for(int i = 0; i < tile.size(); i++)
-			if(tile.get(i).getName().compareTo(name) == 0)
-				t = tile.get(i);
+		for(int i = 0; i < tiles.size(); i++)
+			if(tiles.get(i).getName().compareTo(name) == 0)
+				t = tiles.get(i);
 		return t;
 	}
 	
-	public void addForegroundTiles(Tile tile)
+	public static void addForegroundTiles(Tile tile)
 	{
-		this.foregroundTiles.add(tile);
+		foregroundTiles.add(tile);
 	}
 	
-	public ArrayList<Tile> getForegroundTiles()
+	public static ArrayList<Tile> getForegroundTiles()
 	{
 		return foregroundTiles;
 	}
 	
-	public Tile getForegroundTilesByName(String name)
+	public static Tile getForegroundTilesByName(String name)
 	{
 		Tile t = foregroundTiles.get(1);
 		
@@ -71,17 +71,17 @@ public class Tiles
 		return t;
 	}
 	
-	public void addBackgroundTiles(Tile tile)
+	public static void addBackgroundTiles(Tile tile)
 	{
-		this.backgroundTiles.add(tile);
+		backgroundTiles.add(tile);
 	}
 	
-	public ArrayList<Tile> getBackgroundTiles()
+	public static ArrayList<Tile> getBackgroundTiles()
 	{
 		return backgroundTiles;
 	}
 	
-	public Tile getBackgroundTilesByName(String name)
+	public static Tile getBackgroundTilesByName(String name)
 	{
 		Tile t = backgroundTiles.get(1);
 		

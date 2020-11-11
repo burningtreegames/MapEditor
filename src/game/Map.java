@@ -42,16 +42,16 @@ public class Map
 		for(int y = 0; y < mapSize; y++)
 			for(int x = 0; x < mapSize; x++)
 			{
-				tile = new Tile(tiles.getTilesByName("Grass"));
+				tile = new Tile(Tiles.getTilesByName("Grass"));
 				tile.setX(x);
 				tile.setY(y);
-				tiles.addBackgroundTiles(tile);
+				Tiles.addBackgroundTiles(tile);
 				
-				tile = new Tile(tiles.getTilesByName("Delete"));
+				tile = new Tile(Tiles.getTilesByName("Delete"));
 				
 				tile.setX(x);
 				tile.setY(y);
-				tiles.addForegroundTiles(tile);
+				Tiles.addForegroundTiles(tile);
 			}
 	}
 	
@@ -73,15 +73,15 @@ public class Map
 				if(mapX + x < mapSize && mapY + y < mapSize)
 				{
 					
-					spriteBatch.draw(tiles.getBackgroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
+					spriteBatch.draw(Tiles.getBackgroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
 						
-					if(tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getName().compareTo("Delete") != 0) // If Not Delete Tile
-						spriteBatch.draw(tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
+					if(Tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getName().compareTo("Delete") != 0) // If Not Delete Tile
+						spriteBatch.draw(Tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x)).getSprite(), x * Game.getSpriteSize(), y * Game.getSpriteSize(), Game.getSpriteSize(), Game.getSpriteSize());
 				
 					if(Maths.insideRectangle(x * Game.getSpriteSize(), y * Game.getSpriteSize(), (int)(Gdx.input.getX() / Game.getScale()), (int)(Gdx.input.getY() / Game.getScale()), Game.getSpriteSize()))
 					{
-						spriteBatch.draw(tiles.getTile().get(Cursor.getMouseWheelTileID()).getSprite(), x * Game.getSpriteSize(), (y * Game.getSpriteSize()), Game.getSpriteSize(), Game.getSpriteSize());
-						spriteBatch.draw(tiles.getTilesByName("Cursor").getSprite(), x * Game.getSpriteSize(), (y * Game.getSpriteSize()), Game.getSpriteSize(), Game.getSpriteSize());
+						spriteBatch.draw(Tiles.getTile().get(Cursor.getMouseWheelTileID()).getSprite(), x * Game.getSpriteSize(), (y * Game.getSpriteSize()), Game.getSpriteSize(), Game.getSpriteSize());
+						spriteBatch.draw(Tiles.getTilesByName("Cursor").getSprite(), x * Game.getSpriteSize(), (y * Game.getSpriteSize()), Game.getSpriteSize(), Game.getSpriteSize());
 					}
 				}
 		
@@ -108,13 +108,13 @@ public class Map
 	
 	public static void setForegroundTileAtXY(int x, int y, Tile tile)
 	{
-		tiles.getForegroundTiles().set(((mapY + y) * mapSize) + (mapX + x), tile);
+		Tiles.getForegroundTiles().set(((mapY + y) * mapSize) + (mapX + x), tile);
 	}
 	public static void setBackgroundTileAtXY(int x, int y, Tile tile)
 	{
-		tiles.getBackgroundTiles().set(((mapY + y) * mapSize) + (mapX + x), tile);
+		Tiles.getBackgroundTiles().set(((mapY + y) * mapSize) + (mapX + x), tile);
 	}
 	
-	public static Tile getForegroundTileAtXY(int x, int y){return tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x));}
-	public static Tile getBackgroundTileAtXY(int x, int y){return tiles.getBackgroundTiles().get(((mapY + y) * mapSize) + (mapX + x));}
+	public static Tile getForegroundTileAtXY(int x, int y){return Tiles.getForegroundTiles().get(((mapY + y) * mapSize) + (mapX + x));}
+	public static Tile getBackgroundTileAtXY(int x, int y){return Tiles.getBackgroundTiles().get(((mapY + y) * mapSize) + (mapX + x));}
 }
