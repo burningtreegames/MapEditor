@@ -15,13 +15,31 @@ public class ResourceLoader
 	private Sprite sprite;
 	private Tiles tiles;
 	
+	private static ArrayList<String> group;
+	private static String[][] groupMap;
+	private static int groups;
+	private static int maxGroupSize;
+	
 	public ResourceLoader()
 	{
 		tiles = new Tiles();
 		
+		group = new ArrayList<String>();
+		
+		groups = 0;
+		maxGroupSize = 0;
+		
 		fileReader();
 		mapSaver();
-		System.out.println("tiles loaded = " + getTiles().getTile().size());
+		
+		findMaxGroupSize();
+		
+		groupMap = new String[groups][maxGroupSize];
+
+		System.out.println("tiles loaded = " + getTiles().getTiles().size());
+		
+		populateGroupMap();
+		
 	}
 	
 	public void fileReader()
@@ -42,6 +60,11 @@ public class ResourceLoader
 			break;	
 			case "path":
 				tile.setPath(wordsArray[i + 1]);
+			break;
+			case "group":
+				tile.setGroup(wordsArray[i + 1]);
+				group.add(wordsArray[i + 1]);
+				groups++;
 			break;
 			case "layer":	
 				tile.setLayer(wordsArray[i + 1]);
@@ -68,8 +91,8 @@ public class ResourceLoader
 				sprite.flip(false, true);
 				tile.setWidth((int)sprite.getHeight());
 				tile.setHeight((int)sprite.getHeight());
-				tile.setID(tiles.getTile().size());
-				tiles.addTile(tile);
+				tile.setID(tiles.getTiles().size());
+				tiles.addTiles(tile);
 				tile = new Tile();
 			break;
 			}
@@ -88,6 +111,53 @@ public class ResourceLoader
 		
 	}
 	
+	public void findMaxGroupSize()
+	{
+		int tmpMax = 0;
+		
+		for(int i = 0; i < group.size(); i++)
+		{
+			for(int j = 0; j < group.size(); j++)
+				if(group.get(i).compareTo(group.get(j)) == 0)
+				{
+					group.remove(j);
+					tmpMax++;
+				}
+			
+			if(tmpMax > maxGroupSize)
+				maxGroupSize = tmpMax;
+			
+			tmpMax = 0;
+		}
+		
+		System.out.println("groups = " + group.size() + " maxGroupSize = " + maxGroupSize);
+	}
+	
+	public void populateGroupMap()
+	{
+		int tmp = 0 ;
+		
+		for(int i = 0; i < group.size(); i++)
+		{
+			for(int j = 0; j < tiles.getTiles().size(); j++)
+			{
+				
+				String a = tiles.getTiles().get(j).getGroup();
+				String b = group.get(i);
+				
+				if(a != null && a.compareTo(b) == 0);
+				{
+					//System.out.println("i = " + i + " j = " + j + " tmp = " + tmp);
+					//groupMap[i][tmp] = tiles.getTiles().get(j).getName();
+					System.out.println(a + "   " + b);
+					tmp++;
+				}
+				//System.out.println(tiles.getTiles().get(j).getGroup());
+			}
+			tmp = 0;
+		}
+	}
+	
 	public Tiles getTiles()
 	{
 		return tiles;
@@ -102,4 +172,5 @@ public class ResourceLoader
 	{
 		return sprite;
 	}
+ 
 }

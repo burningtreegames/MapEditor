@@ -24,9 +24,9 @@ public class Cursor
 			x = (int)((Gdx.input.getX() / Game.getScale()) / Game.getSpriteSize());
 			y = (int)((Gdx.input.getY() / Game.getScale()) / Game.getSpriteSize());
 			
-			if(Map.getBackgroundTileAtXY(x, y).getWalkable() && Map.getTiles().getTile().get(mouseWheelTileID).getLayer().compareTo("foreground") == 0)
+			if(Map.getBackgroundTileAtXY(x, y).getWalkable() && Map.getTiles().getTiles().get(mouseWheelTileID).getLayer().compareTo("foreground") == 0)
 			{ 
-				Tile tile = new Tile(Map.getTiles().getTile().get(mouseWheelTileID));////////////////////////////////////FIXXXXXXXXXXXXXXXXXXXXXXXX
+				Tile tile = new Tile(Map.getTiles().getTiles().get(mouseWheelTileID));////////////////////////////////////FIXXXXXXXXXXXXXXXXXXXXXXXX
 				tile.setX(x);
 				tile.setY(y);
 				Map.setForegroundTileAtXY(x, y, tile);
@@ -38,9 +38,9 @@ public class Cursor
 			x = (int)((Gdx.input.getX() / Game.getScale()) / Game.getSpriteSize());
 			y = (int)((Gdx.input.getY() / Game.getScale()) / Game.getSpriteSize());
 			
-			if(Map.getForegroundTileAtXY(x, y).getWalkable() && Map.getTiles().getTile().get(mouseWheelTileID).getLayer().compareTo("background") == 0)
+			if(Map.getForegroundTileAtXY(x, y).getWalkable() && Map.getTiles().getTiles().get(mouseWheelTileID).getLayer().compareTo("background") == 0)
 			{
-				Tile tile = new Tile(Map.getTiles().getTile().get(mouseWheelTileID));////////////////////////////////////FIXXXXXXXXXXXXXXXXXXXXXXXX
+				Tile tile = new Tile(Map.getTiles().getTiles().get(mouseWheelTileID));////////////////////////////////////FIXXXXXXXXXXXXXXXXXXXXXXXX
 				tile.setX(x);
 				tile.setY(y);
 				Map.setBackgroundTileAtXY(x, y, tile);
@@ -60,7 +60,7 @@ public class Cursor
 		
 		///////////////////Mouse Scroll Wheel
 		int mouseWheel = Mouse.getDWheel();
-		if(mouseWheel > 0 && mouseWheelTileID < Map.getTiles().getTile().size() - 1)
+		if(mouseWheel > 0 && mouseWheelTileID < Map.getTiles().getTiles().size() - 1)
 			mouseWheelTileID++;
 		else if(mouseWheel < 0 && mouseWheelTileID > 0)
 			mouseWheelTileID--;

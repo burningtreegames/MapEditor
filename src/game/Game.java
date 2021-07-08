@@ -59,6 +59,7 @@ public class Game implements ApplicationListener
 	{
 		inputListener();
 		map.update();
+		gui.update();
 		cursor.update();
 		
 		Gdx.graphics.setTitle("MapEditor, FPS = " + Gdx.graphics.getFramesPerSecond() + " DT = " + Gdx.graphics.getDeltaTime());

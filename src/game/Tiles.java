@@ -6,10 +6,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class Tiles 
 {
-	private static ArrayList<Tile> tiles;
+	private ArrayList<Tile> tiles;
 	
-	private static ArrayList<Tile> foregroundTiles;
-	private static ArrayList<Tile> backgroundTiles;
+	private ArrayList<Tile> foregroundTiles;
+	private ArrayList<Tile> backgroundTiles;
 	
 	public Tiles()
 	{
@@ -31,17 +31,17 @@ public class Tiles
 	}
 	
 	
-	public static void addTile(Tile tile)
+	public void addTiles(Tile tile)
 	{
 		tiles.add(tile);
 	}
 	
-	public static ArrayList<Tile> getTile()
+	public ArrayList<Tile> getTiles()
 	{
 		return tiles;
 	}
 	
-	public static Tile getTilesByName(String name)
+	public Tile getTilesByName(String name)
 	{
 		Tile t = tiles.get(1);
 		
@@ -51,17 +51,17 @@ public class Tiles
 		return t;
 	}
 	
-	public static void addForegroundTiles(Tile tile)
+	public void addForegroundTiles(Tile tile)
 	{
 		foregroundTiles.add(tile);
 	}
 	
-	public static ArrayList<Tile> getForegroundTiles()
+	public ArrayList<Tile> getForegroundTiles()
 	{
 		return foregroundTiles;
 	}
 	
-	public static Tile getForegroundTilesByName(String name)
+	public Tile getForegroundTilesByName(String name)
 	{
 		Tile t = foregroundTiles.get(1);
 		
@@ -71,17 +71,17 @@ public class Tiles
 		return t;
 	}
 	
-	public static void addBackgroundTiles(Tile tile)
+	public void addBackgroundTiles(Tile tile)
 	{
 		backgroundTiles.add(tile);
 	}
 	
-	public static ArrayList<Tile> getBackgroundTiles()
+	public ArrayList<Tile> getBackgroundTiles()
 	{
 		return backgroundTiles;
 	}
 	
-	public static Tile getBackgroundTilesByName(String name)
+	public Tile getBackgroundTilesByName(String name)
 	{
 		Tile t = backgroundTiles.get(1);
 		

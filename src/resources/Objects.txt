@@ -7,7 +7,7 @@ path
 /bin/resources/GUI/Error.png
 
 layer
-GUI
+util
 
 walkable
 true
@@ -35,6 +35,9 @@ Delete
 path
 /bin/resources/GUI/Delete.png
 
+group
+delete
+
 walkable
 true
 
@@ -51,6 +54,9 @@ Oak
 
 path
 /bin/resources/Landscape/Tree/Oak.png
+
+group
+trees
 
 layer
 foreground
@@ -77,6 +83,9 @@ Evergreen
 path
 /bin/resources/Landscape/Tree/Evergreen.png
 
+group
+trees
+
 layer
 foreground
 
@@ -102,6 +111,9 @@ Grass
 path
 /bin/resources/Landscape/Grass/Grass.png
 
+group
+grass
+
 layer
 background
 
@@ -120,6 +132,9 @@ Water
 
 path
 /bin/resources/Landscape/Water/Water.png
+
+group
+water
 
 layer
 background
@@ -145,6 +160,9 @@ Rock
 
 path
 /bin/resources/Landscape/Rock/Rock.png
+
+group
+rock
 
 layer
 foreground
@@ -190,6 +208,40 @@ Ash
 
 path
 /bin/resources/Entities/NPC/Ash.png
+
+group
+people
+
+layer
+foreground
+
+animated
+true
+
+animation_frames
+4
+
+walkable
+false
+
+destroyable
+true
+
+hp
+1
+
+end
+
+////////////////////////////////////////////////////////////////////////////////
+
+name
+Link
+
+path
+/bin/resources/Entities/NPC/Link.png
+
+group
+people
 
 layer
 foreground

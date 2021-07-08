@@ -14,6 +14,7 @@ public class GUI
 	private int x;
 	private int y;
 	private ArrayList<Button> buttons;
+	//private String[][] buttons;
 	
 	public GUI(int x, int y, int width, int height)
 	{
@@ -22,7 +23,9 @@ public class GUI
 		this.width = width;
 		this.height = height;
 		
-		buttons = new ArrayList<Button>();
+		//buttons = new String[][];
+		
+		//buttons = new ArrayList<Button>();
 	}
 
 	
@@ -36,16 +39,16 @@ public class GUI
 		shape.end();
 		shape.dispose();
 		
-		if(buttons.size() > 0)
+		/*if(buttons.size() > 0)
 			for(int i = buttons.size() - 1; i >= 0; i--)
-				buttons.get(i).render();
+				buttons.get(i).render();*/
 	}
 	
 	public void update()
 	{
-		if(buttons.size() > 0)
+		/*if(buttons.size() > 0)
 			for(int i = buttons.size() - 1; i >= 0; i--)
-				buttons.get(i).update();
+				buttons.get(i).update();*/
 	}
 	
 	
