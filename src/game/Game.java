@@ -35,6 +35,7 @@ public class Game implements ApplicationListener
 		System.out.println("X is the delete foreground tile and background tiles you just overwrite with new tile.");
 		System.out.println("Scroll wheel to change between tiles.");
 		System.out.println("Nothing useful yet just a work in progress more coming soon.");
+		
 		camera = new OrthographicCamera(Game.getWindowWidth(), Game.getWindowHeight());
 		camera.setToOrtho(true, Game.getWindowWidth(), Game.getWindowHeight());
 		

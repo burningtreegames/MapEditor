@@ -73,7 +73,7 @@ public class Tiles
 	
 	public void addBackgroundTiles(Tile tile)
 	{
-		backgroundTiles.add(tile);
+		backgroundTiles.add(new Tile(tile));
 	}
 	
 	public ArrayList<Tile> getBackgroundTiles()

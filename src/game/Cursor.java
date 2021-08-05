@@ -43,7 +43,7 @@ public class Cursor
 				Tile tile = new Tile(Map.getTiles().getTiles().get(mouseWheelTileID));////////////////////////////////////FIXXXXXXXXXXXXXXXXXXXXXXXX
 				tile.setX(x);
 				tile.setY(y);
-				Map.setBackgroundTileAtXY(x, y, tile);
+				Map.setBackgroundTileAtXY(x, y, new Tile(tile));
 			}
 		}
 		

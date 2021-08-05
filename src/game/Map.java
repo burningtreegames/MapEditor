@@ -42,7 +42,7 @@ public class Map
 		for(int y = 0; y < mapSize; y++)
 			for(int x = 0; x < mapSize; x++)
 			{
-				tile = new Tile(tiles.getTilesByName("Grass"));
+				tile = new Tile(tiles.getTilesByName("Water"));
 				tile.setX(x);
 				tile.setY(y);
 				tiles.addBackgroundTiles(tile);
